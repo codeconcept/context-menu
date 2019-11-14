@@ -20,3 +20,25 @@
 .App-link {
   color: #09d3ac;
 }
+
+.context-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #09d3ac;
+}
+
+.context-menu ul {
+  list-style-type: none;
+}
+
+.option {
+  cursor: pointer;
+}
