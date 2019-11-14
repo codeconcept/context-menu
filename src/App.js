@@ -2,9 +2,18 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+  state = { hasRightClicked: false }
+  handleRightClick = e => {
+    e.preventDefault()
+    this.setState({ hasRightClicked: true})
+  }
+  handleLeftClick = () => {
+    this.setState({ hasRightClicked: false})
+  }
+  render() { 
+    return (
+    <div className="App" onContextMenu={this.handleRightClick} onClick={this.handleLeftClick}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,6 +30,7 @@ function App() {
       </header>
     </div>
   );
+  }
 }
 
 export default App;
